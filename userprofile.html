@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile - Beta Tech System</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        .header {
+            padding: 30px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile-card {
+            background: white;
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .profile-header {
+            background: linear-gradient(135deg, #2563eb, #06b6d4);
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .user-info {
+            margin-top: 70px;
+        }
+
+        .user-info h2 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .user-info p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px 20px;
+            background: #f9f9f9;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stats div {
+            text-align: center;
+        }
+
+        .stats h3 {
+            margin: 0;
+            font-size: 24px;
+            color: #2563eb;
+        }
+
+        .stats p {
+            margin: 5px 0 0;
+            color: #666;
+        }
+
+        .content {
+            display: flex;
+            min-height: 400px;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #f5f5f5;
+            padding: 20px;
+            border-right: 1px solid #eee;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 12px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            transition: background 0.2s;
+        }
+
+        .sidebar a:hover {
+            background: #e0e0e0;
+        }
+
+        .sidebar a.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .section p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+        }
+
+        .footer {
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 12px;
+            background: rgba(0,0,0,0.2);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Beta Tech Solutions</h1>
+    <p>User Profile Management</p>
+</div>
+
+<div class="profile-container">
+
+    <div class="profile-card">
+
+        <div class="profile-header">
+            <img src="https://i.pravatar.cc/150?img=32" alt="User Profile Picture">
+        </div>
+
+        <div class="user-info">
+            <h2>Kamanzi Jean</h2>
+            <p>System Administrator</p>
+            <p>Email: kamanzi@betatech.com</p>
+            <p>Phone: +250 123 456 789</p>
+            <p>Location: Kigali, Rwanda</p>
+        </div>
+
+        <div class="stats">
+            <div>
+                <h3>24</h3>
+                <p>Projects</p>
+            </div>
+            <div>
+                <h3>1.2K</h3>
+                <p>Clients</p>
+            </div>
+            <div>
+                <h3>98%</h3>
+                <p>Performance</p>
+            </div>
+            <div>
+                <h3>5</h3>
+                <p>Years</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="sidebar">
+                <a href="#dashboard" class="active" onclick="showSection('dashboard')">Dashboard</a>
+                <a href="#profile" onclick="showSection('profile')">Profile Details</a>
+                <a href="#settings" onclick="showSection('settings')">Settings</a>
+                <a href="#security" onclick="showSection('security')">Security</a>
+                <a href="index.html">Back to Home</a>
+            </div>
+
+            <div class="main-content">
+                <div id="dashboard" class="section active">
+                    <h2>Dashboard</h2>
+                    <p>Welcome to your Beta Tech System Dashboard. Here you can overview your account activity, recent projects, and system notifications.</p>
+                    <p><strong>Recent Activity:</strong></p>
+                    <ul>
+                        <li>Logged in from new device - 2 hours ago</li>
+                        <li>Updated profile information - 1 day ago</li>
+                        <li>Completed project milestone - 3 days ago</li>
+                    </ul>
+                    <button class="btn" onclick="viewReports()">View Reports</button>
+                </div>
+
+                <div id="profile" class="section">
+                    <h2>Profile Details</h2>
+                    <p>Manage your personal information and account details.</p>
+                    <p><strong>Full Name:</strong> Kamanzi Jean</p>
+                    <p><strong>Role:</strong> System Administrator</p>
+                    <p><strong>Email:</strong> kamanzi@betatech.com</p>
+                    <p><strong>Phone:</strong> +250 123 456 789</p>
+                    <p><strong>Location:</strong> Kigali, Rwanda</p>
+                    <p><strong>Joined:</strong> January 2021</p>
+                    <button class="btn" onclick="editProfile()">Edit Profile</button>
+                </div>
+
+                <div id="settings" class="section">
+                    <h2>Settings</h2>
+                    <p>Configure your account preferences and system settings.</p>
+                    <p>Notification preferences, theme settings, and other configurations can be managed here.</p>
+                    <button class="btn" onclick="saveSettings()">Save Settings</button>
+                </div>
+
+                <div id="security" class="section">
+                    <h2>Security</h2>
+                    <p>Manage your account security settings.</p>
+                    <p>Change password, enable two-factor authentication, and review login history.</p>
+                    <button class="btn" onclick="changePassword()">Change Password</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>© 2026 Beta Tech Solutions Ltd</p>
+</div>
+
+<script>
+function showSection(sectionId) {
+    // Hide all sections
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => section.classList.remove('active'));
+
+    // Remove active class from sidebar links
+    const links = document.querySelectorAll('.sidebar a');
+    links.forEach(link => link.classList.remove('active'));
+
+    // Show selected section
+    document.getElementById(sectionId).classList.add('active');
+
+    // Add active class to clicked link
+    event.target.classList.add('active');
+}
+
+function editProfile() {
+    alert('Opening profile editor...');
+}
+
+function saveSettings() {
+    alert('Settings saved successfully!');
+}
+
+function changePassword() {
+    alert('Redirecting to password change...');
+}
+
+function viewReports() {
+    alert('Opening reports dashboard...');
+}
+</script>
+
+</body>
+</html>
