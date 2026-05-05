@@ -24,6 +24,29 @@
             margin: 0;
         }
 
+        .navbar {
+            background: white;
+            color: black;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .navbar a:hover {
+            background: #f0f0f0;
+        }
+
         .container {
             flex: 1;
             display: flex;
@@ -99,6 +122,16 @@
 <body>
 
 <div class="header">
+    <!-- Navbar Start -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="employee.html.html">Employee Registration</a>
+        <a href="product.html">Product Registration</a>
+        <a href="feedback.html">Customer Feedback</a>
+        <a href="./bati/bright.html">Event Booking</a>
+    </div>
+    <!-- Navbar End -->
     <h1>Beta Tech Solutions</h1>
 </div>
 
